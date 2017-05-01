@@ -39,6 +39,9 @@ namespace SonOfCod
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            var context = app.ApplicationServices.GetService<ApplicationDbContext>();
+            AddTestData(context);
+
             app.UseStaticFiles();
             app.UseIdentity();
             app.UseMvc(routes =>
@@ -55,10 +58,23 @@ namespace SonOfCod
                 app.UseDeveloperExceptionPage();
             }
 
-            app.Run(async (context) =>
+            app.Run(async (context1) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                await context1.Response.WriteAsync("Hello World!");
             });
+        }
+
+        private static void AddTestData(ApplicationDbContext context)
+        {
+            var seedMarketingContent = new Models.MarketingPageContent
+            {
+                Title = "Our Products",
+                Tagline = "The key to good seafood is freshness!",
+                Introduction = "Being a vertically integrated company allows Pacific Seafood to receive, process and deliver seafood quickly and efficiently. With plants stretching the Pacific Coastline from Alaska to Mexico, we have access to a wide variety of species and offer you a diverse selection of product types and forms.",
+                ImageLink = "https://static01.nyt.com/images/2015/12/29/dining/29salmon-21/29salmon-21-superJumbo.jpg"
+            };
+            context.MarketingPageContents.Add(seedMarketingContent);
+            context.SaveChanges();
         }
     }
 }

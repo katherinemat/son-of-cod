@@ -17,5 +17,6 @@ namespace SonOfCod.Models
             base.OnModelCreating(builder);
         }
         public DbSet<Visitor> Visitors { get; set; }
+        public DbSet<MarketingPageContent> MarketingPageContents { get; set; }
     }
 }
