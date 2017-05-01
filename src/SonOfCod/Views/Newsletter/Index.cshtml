@@ -1,5 +1,49 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model SonOfCod.Models.Visitor
+
 @{
+    ViewData["Title"] = "Son Of Cod - Subscribe to Newsletter";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+@if (User.Identity.IsAuthenticated)
+{
+    <p>Hello @User.Identity.Name!</p>
+    @foreach (var visitor in ViewBag.Visitors)
+    {
+        <p>visitor.VisitorEmail</p>
+        <p>visitor.MonthlySpending</p>
+        <p>visitor.AmountPeople</p>
+        <p>visitor.Reason</p>
+        //put in buttons to delete users from list?
+    }
+}
+else
+{
+    @using (Html.BeginForm("Subscribe", "Newsletter", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.Label("Email")
+            @Html.TextBoxFor(m => m.VisitorEmail)
+        </div>
+
+        <div class="form-group">
+            @Html.Label("How much do you spend on seafood a month?")
+            @Html.TextBoxFor(m => m.MonthlySpending)
+        </div>
+
+        <div class="form-group">
+            @Html.Label("How many people are you responsible for feeding?")
+            @Html.TextBoxFor(m => m.AmountPeople)
+        </div>
+
+        <div class="form-group">
+            @Html.Label("What's your reason for subscribing?")
+            @Html.DropDownList("Reason", (IEnumerable<SelectListItem>)ViewBag.Reasons, new { @class = "form-control" })
+        </div>
+
+        <input type="submit" value="Sign up for mailing list" class="btn btn-primary" />
+    }
+}
+
+
+
