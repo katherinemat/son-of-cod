@@ -45,7 +45,7 @@ namespace SonOfCod
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Account}/{action=Index}/{id?}");
+                    template: "{controller=Admin}/{action=Index}/{id?}");
             });
 
             loggerFactory.AddConsole();

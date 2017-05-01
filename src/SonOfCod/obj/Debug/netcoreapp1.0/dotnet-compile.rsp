@@ -204,6 +204,9 @@
 C:\Users\epicodus\Desktop\SonOfCod\src\SonOfCod\Program.cs
 C:\Users\epicodus\Desktop\SonOfCod\src\SonOfCod\Startup.cs
 C:\Users\epicodus\Desktop\SonOfCod\src\SonOfCod\Controllers\AdminController.cs
+C:\Users\epicodus\Desktop\SonOfCod\src\SonOfCod\Migrations\20170501180314_Initial.cs
+C:\Users\epicodus\Desktop\SonOfCod\src\SonOfCod\Migrations\20170501180314_Initial.Designer.cs
+C:\Users\epicodus\Desktop\SonOfCod\src\SonOfCod\Migrations\ApplicationDbContextModelSnapshot.cs
 C:\Users\epicodus\Desktop\SonOfCod\src\SonOfCod\Models\ApplicationDbContext.cs
 C:\Users\epicodus\Desktop\SonOfCod\src\SonOfCod\Models\ApplicationUser.cs
 C:\Users\epicodus\Desktop\SonOfCod\src\SonOfCod\ViewModels\AdminLoginViewModel.cs

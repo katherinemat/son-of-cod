@@ -45,7 +45,7 @@ namespace SonOfCod.Controllers
             IdentityResult result = await _userManager.CreateAsync(admin, model.Password);
             if (result.Succeeded)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Login");
             }
             else
             {
