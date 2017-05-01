@@ -24,3 +24,15 @@
     font-size: 24px;
     font-family: 'Times New Roman', Times, serif;
 }
+
+.visitor-email {
+    font-weight: bold;
+}
+
+.newsletter-list {
+    display: flex;
+}
+
+.newsletter-list-item {
+    width: 300px;
+}

@@ -7,14 +7,18 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-    <p>Hello @User.Identity.Name!</p>
-    @foreach (var visitor in ViewBag.Visitors)
-    {
-        <p>visitor.VisitorEmail</p>
-        <p>visitor.MonthlySpending</p>
-        <p>visitor.AmountPeople</p>
-        <p>visitor.Reason</p>
-    }
+    <h2>Hello @User.Identity.Name!</h2>
+    <h3>List of people signed up for email newsletter: </h3>
+    <div class="newsletter-list">
+        @foreach (var visitor in ViewBag.Visitors)
+        {
+            <div class="newsletter-list-item">
+                <p><span class="visitor-email">@visitor.VisitorEmail</span> spends about $@visitor.MonthlySpending per month</p>
+                <p>@visitor.AmountPeople people to feed</p>
+                <p>Reason for signing up: @visitor.Reason</p>
+            </div>
+        }
+    </div>
 }
 else
 {
