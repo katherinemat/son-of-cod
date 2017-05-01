@@ -41,6 +41,7 @@ namespace SonOfCod.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(AdminRegisterViewModel model)
         {
+            //later on, this register page will only be accessed by admin members
             var admin = new ApplicationUser { UserName = model.Email };
             IdentityResult result = await _userManager.CreateAsync(admin, model.Password);
             if (result.Succeeded)
@@ -69,6 +70,13 @@ namespace SonOfCod.Controllers
             {
                 return View();
             }
+        }
+        
+        [HttpPost]
+        public async Task<IActionResult> LogOff()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Login");
         }
     }
 }
