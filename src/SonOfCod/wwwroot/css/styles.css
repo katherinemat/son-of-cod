@@ -2,15 +2,25 @@
     margin-right: 20px;
 }
 
-.marketing-image-container {
-    width: 100vw;
-    height: 400px;
-    overflow: hidden;
-}
-
 .marketing-image {
     width: 100vw;
     height: 400px;
     object-fit: cover;
 }
 
+.content {
+    margin-top: 30px;
+}
+
+.title {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.tagline {
+    color: blue;
+    font-style: italic;
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+}

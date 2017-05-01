@@ -5,6 +5,27 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@if (User.Identity.IsAuthenticated)
+{
+    <p>Hello @User.Identity.Name!</p>
+    
+}
+else
+{
+    <img class="marketing-image" src="@Html.DisplayFor(Model => Model.ImageLink)" />
+
+    <h1 class="title">@Html.DisplayFor(Model => Model.Title)</h1>
+
+    <div class="row">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-8 content">
+            <p class="tagline">@Html.DisplayFor(Model => Model.Tagline)</p>
+
+            <p class="introduction">@Html.DisplayFor(Model => Model.Introduction)</p>
+        </div>
+        <div class="col-xs-1"></div>
+    </div>
+
+}
 
 
-<div class="marketing-image-container"><img class="marketing-image" src="@Html.DisplayFor(Model => Model.ImageLink)" /></div>
