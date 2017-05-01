@@ -7,6 +7,7 @@ using SonOfCod.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 
 namespace SonOfCod.Controllers
 {
@@ -23,6 +24,14 @@ namespace SonOfCod.Controllers
         {
             var thisContent = _db.PageContents.FirstOrDefault(content => content.Page == "Marketing");
             return View(thisContent);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(PageContent pageContent)
+        {
+            _db.Entry(pageContent).State = EntityState.Modified;
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
