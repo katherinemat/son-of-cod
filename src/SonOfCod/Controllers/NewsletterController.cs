@@ -32,5 +32,14 @@ namespace SonOfCod.Controllers
             ViewBag.Visitors = _db.Visitors.ToList();
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Create (Visitor visitor)
+        {
+            _db.Visitors.Add(visitor);
+            _db.SaveChanges();
+            //MessageBox.Show("Success");
+            return RedirectToAction("Index");
+        }
     }
 }
