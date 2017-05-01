@@ -8,9 +8,10 @@ using SonOfCod.Models;
 namespace SonOfCod.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170501212212_createMarketingPageContent")]
+    partial class createMarketingPageContent
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
@@ -172,7 +173,7 @@ namespace SonOfCod.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("SonOfCod.Models.PageContent", b =>
+            modelBuilder.Entity("SonOfCod.Models.MarketingPageContent", b =>
                 {
                     b.Property<int>("ContentId")
                         .ValueGeneratedOnAdd();
@@ -181,15 +182,13 @@ namespace SonOfCod.Migrations
 
                     b.Property<string>("Introduction");
 
-                    b.Property<string>("Page");
-
                     b.Property<string>("Tagline");
 
                     b.Property<string>("Title");
 
                     b.HasKey("ContentId");
 
-                    b.ToTable("PageContents");
+                    b.ToTable("MarketingPageContents");
                 });
 
             modelBuilder.Entity("SonOfCod.Models.Visitor", b =>

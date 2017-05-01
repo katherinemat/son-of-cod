@@ -7,8 +7,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SonOfCod.Models
 {
-    [Table("MarketingPageContents")]
-    public class MarketingPageContent
+    [Table("PageContents")]
+    public class PageContent
     {
         [Key]
         public int ContentId { get; set; }
@@ -16,5 +16,6 @@ namespace SonOfCod.Models
         public string Tagline { get; set; }
         public string Introduction { get; set; }
         public string ImageLink { get; set; }
+        public string Page { get; set; }
     }
 }

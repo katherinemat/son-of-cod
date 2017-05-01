@@ -1,3 +1,16 @@
 ﻿.navbar-words {
     margin-right: 20px;
 }
+
+.marketing-image-container {
+    width: 100vw;
+    height: 400px;
+    overflow: hidden;
+}
+
+.marketing-image {
+    width: 100vw;
+    height: 400px;
+    object-fit: cover;
+}
+

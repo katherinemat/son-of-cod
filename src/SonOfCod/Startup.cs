@@ -66,14 +66,15 @@ namespace SonOfCod
 
         private static void AddTestData(ApplicationDbContext context)
         {
-            var seedMarketingContent = new Models.MarketingPageContent
+            var seedMarketingContent = new Models.PageContent
             {
                 Title = "Our Products",
                 Tagline = "The key to good seafood is freshness!",
                 Introduction = "Being a vertically integrated company allows Pacific Seafood to receive, process and deliver seafood quickly and efficiently. With plants stretching the Pacific Coastline from Alaska to Mexico, we have access to a wide variety of species and offer you a diverse selection of product types and forms.",
-                ImageLink = "https://static01.nyt.com/images/2015/12/29/dining/29salmon-21/29salmon-21-superJumbo.jpg"
+                ImageLink = "https://static01.nyt.com/images/2015/12/29/dining/29salmon-21/29salmon-21-superJumbo.jpg",
+                Page = "Marketing"
             };
-            context.MarketingPageContents.Add(seedMarketingContent);
+            context.PageContents.Add(seedMarketingContent);
             context.SaveChanges();
         }
     }
